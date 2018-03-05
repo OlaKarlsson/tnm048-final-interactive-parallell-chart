@@ -3,7 +3,7 @@ stackedBar,
 pc;
 
 queue()
-.defer(d3.csv,'static/data/merged_all_imdb_bechdel.csv')
+.defer(d3.json,'static/data/merged_all_imdb_bechdel.json')
 .await(draw);
 
 

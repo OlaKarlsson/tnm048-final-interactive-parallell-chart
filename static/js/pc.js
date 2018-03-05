@@ -93,7 +93,7 @@ function paralellChart(rawData) {
       var filteredData = [];
       for (let i = 0; i < rawData.length; i++) {
         const movie = rawData[i];
-        if (movie.title_year === selected.year) {
+        if (Number(movie.title_year) === Number(selected.year)) {
           filteredData.push(movie);
         }
       }
@@ -167,7 +167,7 @@ function paralellChart(rawData) {
           .attr("class", "brush")
           .each(function (d) {
             d3.select(this).call(d.brush = d3.brushY()
-                .extent([[-10, 0], [10, height]])
+                .extent([[-10, 0], [15, height]])
                 .on("start", brushstart)
                 .on("brush", brush)
                 .on("end", brush))
@@ -181,6 +181,7 @@ function paralellChart(rawData) {
       projection = svg.selectAll(".background path, .foreground path")
           .on("mouseover", mouseover)
           .on("mouseout", mouseout);
+
 
   }
 
