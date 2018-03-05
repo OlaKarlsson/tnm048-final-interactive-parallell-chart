@@ -1,0 +1,25 @@
+.bar{
+    fill: steelblue;
+}
+
+.bar:hover {
+    fill: brown;
+  }
+
+  .selected{
+    fill: brown;
+  }
+
+.brush-bar-chart .x.axis path {
+    display: none;
+  }
+
+  #brush-bar-chart .x.axis text {
+      text-anchor: end;
+      transform: rotate(-45deg) translate(-6px, -4px);
+  }
+
+
+  #brush-bar-chart svg {
+      overflow: visible;
+  }

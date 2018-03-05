@@ -1,0 +1,29 @@
+.bar{
+    fill: steelblue;
+    
+}
+
+.bar:hover {
+    fill: brown;
+    cursor: pointer;
+  }
+
+  .selected{
+    fill: brown;
+  }
+
+/* From https://bl.ocks.org/d3noob/257c360b3650b9f0a52dd8257d7a2d73 */
+div.bar-tooltip {
+    position: absolute;
+    text-align: center;
+    width: 100px;
+    height: 45px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: white;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+  }
+  
+  

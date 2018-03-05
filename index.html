@@ -1,1 +1,95 @@
-<h1>Start</h1>
+<!DOCTYPE html>
+<style>
+    .zoom {
+        cursor: move;
+        fill: none;
+        pointer-events: all;
+    }
+
+    .area {
+        fill: steelblue;
+        clip-path: url(#clip);
+    }
+</style>
+
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>IMDB - Bechel</title>
+  <link rel="stylesheet" href="./static/lib/css//bootstrap.min.css">
+  <link rel="stylesheet" href="./static/lib/css/keen-dashboards.css">
+  <link rel="stylesheet" href="./static/css/bar.css">
+  <link rel="stylesheet" href="./static/css/barchart.css">
+  <link rel="stylesheet" href="./static/css/normalise.css">
+  <link rel="stylesheet" href="./static/css/pc.css">
+  
+
+</head>
+<body class="application">
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./">IMDB - Bechel</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    
+    <!-- plots -->
+    <div class="row">
+      <div class="col">
+        <div class="chart-wrapper">
+
+          <div class="chart-title">
+            Average Bechdel rating per year - only years with more than <span id="threshold-label">??</span> movies
+          </div>
+          <div class="chart-stage">
+            <div id ="bar-chart"></div>
+          </div>
+        </div>
+      </div>
+    </div><!-- row -->
+      <div class="row">
+      <div class="col">
+        <div class="chart-wrapper">
+
+          <div class="chart-title">
+              Year: <span id="year-label">All years</span>
+          </div>
+          <div class="chart-stage">
+              <div id ="pc-chart"></div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- row -->
+
+</div>
+
+  <script src="./static/lib/js/jquery.min.js"></script>
+  <script src="./static/lib/js/bootstrap.min.js"></script>
+  <script src="./static/lib/js/d3.min.js"></script>
+  <script src="./static/lib/js/crossfilter.min.js"></script>
+  <script src="./static/lib/js/queue.js" type='text/javascript'></script>
+  <!-- Modules -->
+
+  
+  <script src="./static/js/pc.js"></script>
+  <script src="./static/js/bar.js"></script>
+  <script src="./static/js/barchart.js"></script>
+  <script src="./static/js/main.js"></script>
+
+</body>
+</html>
