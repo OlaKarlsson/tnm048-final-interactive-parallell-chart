@@ -146,7 +146,7 @@ function paralellChart() {
       .attr("y", -9)
       .text(function (d) { return d.name; });
 
-    var colours = ["red", "yellow", "orange", "green"];
+    var colours = ["red", "gold", "orange", "green"];
     //Add color here
     background = svg.append("g")
       .attr("class", "background")
@@ -167,7 +167,6 @@ function paralellChart() {
 
       axes.append("g")
           .attr("class", "brush")
-          /* ~~ Add brush here */
           .each(function (d) {
             d3.select(this).call(d.brush = d3.brushY()
                 .extent([[-10, 0], [10, height]])
@@ -188,21 +187,14 @@ function paralellChart() {
   }
 
 
-
-
-
   //Tooltip
   var tooltip = d3.select(pcChartDiv).append("div")
        .attr("class", "tooltip")
        .style("opacity", 0);
 
 
-
-
-
   function mouseover(d) {
 
-    //Only show then active..
     tooltip.transition().duration(200).style("opacity", .9);
     var mouse = d3.mouse(svg.node()).map( function(d) { return parseInt(d); } );
     tooltip.attr(
@@ -213,7 +205,6 @@ function paralellChart() {
 
     svg.classed("active", true);
 
-    // this could be more elegant
     if (typeof d === "string") {
       projection.classed("inactive", function(p) { return p.name !== d; });
       projection.filter(function(p) { return p.name === d; }).each(moveToFront);
@@ -273,25 +264,11 @@ function paralellChart() {
     function within(d, extent, dim) {
       var w =  dim.scale(d[dim.name]) >= extent[0]  && dim.scale(d[dim.name]) <= extent[1];
 
-
-      if(w){
-          /* ~~ Call the other graphs functions to highlight the brushed.~~*/
-          // sp.selectDots(w);
-          // countriesArray.push(d);
-          // console.log(countriesArray);
-          // sp.selectDots(countriesArray);
-      }
-
       return w;
     };
 
 
   } //Brush
-
-  //Select all the foregrounds send in the function as value
-  this.selectLine = function (value) {
-    /* ~~ Select the lines ~~*/
-  };
 
   function axesDims(height) {
     return [
