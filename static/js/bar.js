@@ -43,7 +43,6 @@ var newData = d3.nest()
 
 console.log(newData);
 //Filter the data to only have years with more than a certain number of movies
-//TODO: Possible allow for dynamic filtering, based on https://bl.ocks.org/officeofjane/9b9e606e9876e34385cc4aeab188ed73
 var filterTreshold = 20;
 var filteredData = newData.filter(function(d){
     return d.count > filterTreshold;
@@ -67,11 +66,6 @@ var tooltipDiv = d3.select("body").append("div")
 .style("opacity", 0);
       
 
-// format the data
-// data.forEach(function(d) {
-// d.sales = +d.sales;
-// });
-
 // Scale the range of the data in the domains
 x.domain(filteredData.map(function (d) { return d.year }));
 y.domain([0, 3]);
@@ -92,19 +86,7 @@ svg.selectAll(".bar")
     .on("click", mouseClick)
     .on("mouseover", mouseOver)
     .on("mouseout", mouseOut);
-    // .on("mouseover", function(d) {
-    // tooltipDiv.transition()
-    //     .duration(200)
-    //     .style("opacity", .9);
-    // tooltipDiv.html("Year: " + d.year + "<br/>" + "Avg rating: " +d.avgRating.toFixed(1)+ "<br/>" + "Count: " +d.count)
-    //     .style("left", (d3.event.pageX) + "px")
-    //     .style("top", (d3.event.pageY - 28) + "px");
-    // })
-    // .on("mouseout", function(d) {
-    // tooltipDiv.transition()
-    //     .duration(500)
-    //     .style("opacity", 0);
-    // });
+  
 
     function mouseClick(e) {
         console.log(e);
@@ -117,15 +99,8 @@ svg.selectAll(".bar")
         d3.select(d3.event.srcElement)
         .attr("class", "bar selected");
         
-        // tooltipDiv.transition()
-        //     .duration(200)
-        //     .style("opacity", .9);
-        // tooltipDiv.html("Year: " + e.year + "<br/>" + "Avg rating: " + e.avgRating.toFixed(1) + "<br/>" + "Count: " + e.count)
-        //     .style("left", (d3.event.pageX) + "px")
-        //     .style("top", (d3.event.pageY - 28) + "px");
-
-            var myPC = new paralellChart();
-            myPC.update(data, e);
+            var myPC = new paralellChart(data);
+            myPC.update(e);
     }
 
 
@@ -149,13 +124,6 @@ svg.selectAll(".bar")
     }
 
 
-// brush = d3.brush()
-// .on("brush", brushing);
-
-// svg.append("g")
-//     .attr("class", ".brush")
-//     .call(brush);
-
 
 
 // add the x Axis
@@ -170,16 +138,6 @@ svg.append("g")
 //Print out to the page where the filtering threshold is
 d3.select("#threshold-label").html(filterTreshold);
 
-
-function brushing() {
-
-    // .attr("class", "brushed");
-    // var d_brushed =  d3.selectAll(".brushed").data();
-    var brush_coords = d3.brushSelection(this);
-    console.log(brush_coords);
-    
-
-}
 
 
 }

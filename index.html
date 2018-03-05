@@ -28,7 +28,6 @@
   <link rel="stylesheet" href="./static/lib/css//bootstrap.min.css">
   <link rel="stylesheet" href="./static/lib/css/keen-dashboards.css">
   <link rel="stylesheet" href="./static/css/bar.css">
-  <link rel="stylesheet" href="./static/css/barchart.css">
   <link rel="stylesheet" href="./static/css/normalise.css">
   <link rel="stylesheet" href="./static/css/pc.css">
   
@@ -52,7 +51,6 @@
     <div class="row">
       <div class="col">
         <div class="chart-wrapper">
-
           <div class="chart-title">
             Average Bechdel rating per year - only years with more than <span id="threshold-label">??</span> movies
           </div>
@@ -67,7 +65,7 @@
         <div class="chart-wrapper">
 
           <div class="chart-title">
-              Year: <span id="year-label">All years</span>
+              Year: <span id="year-label">All years </span> <button id="reset-pc">Reset (See all years again)</button>
           </div>
           <div class="chart-stage">
               <div id ="pc-chart"></div>
@@ -88,7 +86,6 @@
   
   <script src="./static/js/pc.js"></script>
   <script src="./static/js/bar.js"></script>
-  <script src="./static/js/barchart.js"></script>
   <script src="./static/js/main.js"></script>
 
 </body>
