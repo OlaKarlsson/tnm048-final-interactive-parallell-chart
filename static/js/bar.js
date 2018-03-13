@@ -22,7 +22,7 @@ var y = d3.scaleLinear()
 //https://stackoverflow.com/questions/37172184/rename-key-and-values-in-d3-nest
 
 var newData = d3.nest()
-.key(function(d) { return d.title_year; })
+.key(function(d) { return d.title_year; }).sortKeys(d3.ascending)
 .rollup(function(values) {
     return {
         avgRating: d3.mean(values, function(d) {return +d["bechdel_rating"]; }),
@@ -49,6 +49,7 @@ var filteredData = newData.filter(function(d){
 })
 
 console.log(filteredData);
+
 
 
 // append the svg object to the body of the page

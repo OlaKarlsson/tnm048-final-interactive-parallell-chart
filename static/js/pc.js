@@ -27,58 +27,6 @@ function paralellChart(rawData) {
 
 
 
-  // this.init = function (initData) {
-
-  //   console.log("PC Init");
-
-    
-
-  //   dimensions = axesDims(height);
-  //   dimensions.forEach(function (dim) {
-  //     dim.scale.domain(dim.type === "number"
-  //       ? d3.extent(initData, function (d) { return +d[dim.name]; })
-  //       : initData.map(function (d) { return d[dim.name]; }).sort());
-  //   });
-
-  //   svg = d3.select(pcChartDiv).append("svg")
-  //     .attr("id","pc_svg")
-  //     .attr("width", width + margin.left + margin.right)
-  //     .attr("height", height + margin.top + margin.bottom)
-  //     .append("g")
-  //     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-  //   x = d3.scaleBand()
-  //     .domain(dimensions.map(function (d) { return d.name; }))
-  //     //Domain set the input boundries, .map on the dimensions, runs it once for each in the array
-  //     .range([0, width]);
-
-
-  //   axes = svg.selectAll(".axes")
-  //     .data(dimensions)//Feed in the data from dimensions
-  //     .enter()
-  //     .append("g").attr("class", "dimension")
-  //     .attr("transform", function (d) {
-  //       return "translate(" + x(d.name) + ")";
-  //     });;
-  //   //Set up the axes
-
-  //   //add the text/numbers
-  //   axes.append("g")
-  //     .attr("class", "axis")
-  //     .each(function (d) { d3.select(this).call(yAxis.scale(d.scale)); })
-  //     .append("text")
-  //     .attr("class", "title")
-  //     .style('fill', 'black')
-  //     .style('font-size', '9px')
-  //     .attr("text-anchor", "middle")
-  //     .attr("y", -9)
-  //     .text(function (d) { return d.name; });
-
-  //     this.update(initData);
-
-  // }
-
-
 
   this.update = function (selected) {
 
@@ -280,7 +228,7 @@ function paralellChart(rawData) {
         name: "movie_facebook_likes",
         scale: d3.scaleLinear().range([height, 0]),
         type: "number"
-      },
+      },     
       {
         name: "director_facebook_likes",
         scale: d3.scaleLinear().range([height, 0]),
